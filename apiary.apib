@@ -8,6 +8,7 @@ HOST: http://r.com
 ## ログインAPI [/api/login]
 
 ### ログイン [POST]
+
 + Request (application/json)
 
         {
@@ -18,15 +19,16 @@ HOST: http://r.com
 + Response 200 (application/json)
 
         {
-          "result": "ng",
+          "result": "ok",
           "token": "abcdefghijklmnop",
         }
 
 ### ログイン パラメータエラー [POST]
+
 + Request (application/json)
 
         {
-            username : "test@example.com",
+            username : "",
             password : "",
         }
 
