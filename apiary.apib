@@ -2,12 +2,12 @@ FORMAT: 1A
 HOST: http://r.com
 
 # Rice
-$BA49q$K$*JF$rG[C#$9$k%9%^%[%"%W%j$N(BAPI$B%I%-%e%a%s%H$K$J$j$^$9!#(B
+全国にお米を配達するスマホアプリのAPIドキュメントになります。
 
 
-## $B%m%0%$%s(BAPI [/api/login]
+## ログインAPI [/api/login]
 
-### $B%m%0%$%s(B [POST]
+### ログイン [POST]
 + Request (application/json)
 
         {
@@ -22,7 +22,7 @@ HOST: http://r.com
           "token": "abcdefghijklmnop",
         }
 
-### $B%m%0%$%s(B $B%Q%i%a!<%?%(%i!<(B [GET]
+### ログイン パラメータエラー [GET]
 + Request (application/json)
 
         {
@@ -34,10 +34,10 @@ HOST: http://r.com
 
         {
           "result": "ng",
-          "message": "$B%m%0%$%s=PMh$^$;$s$G$7$?(B",
+          "message": "ログイン出来ませんでした",
         }
 
-### $B%m%0%$%s(B $B%a%=%C%I%(%i!<(B [GET]
+### ログイン メソッドエラー [GET]
 + Response 405 (application/json)
 
         {
