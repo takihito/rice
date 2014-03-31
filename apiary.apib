@@ -1,47 +1,46 @@
 FORMAT: 1A
-HOST: http://www.google.com
+HOST: http://r.com
 
-# rice
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+# Rice
+全国にお米を配達するスマホアプリのAPIドキュメントになります。
 
-# Group Notes
-Notes related resources of the **Notes API**
 
-## Notes Collection [/notes]
-### List all Notes [GET]
-+ Response 200 (application/json)
+## ログインAPI [/api/login]
 
-        [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
-        }]
-
-### Create a Note [POST]
+### ログイン [POST]
 + Request (application/json)
 
-        { "title": "Buy egg and rice for breakfast." }
+        {
+            username : "test@example.com",
+            password : "xxxxxxxx",
+        }
 
-+ Response 201 (application/json)
-
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
-
-## Note [/notes/{id}]
-A single Note object with all its details
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
-
-### Retrieve a Note [GET]
 + Response 200 (application/json)
 
-    + Header
+        {
+          "result": "ng",
+          "token": "abcdefghijklmnop",
+        }
 
-            X-My-Header: The Value
+### ログイン パラメータエラー [GET]
++ Request (application/json)
 
-    + Body
+        {
+            username : "test@example.com",
+            password : "",
+        }
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
++ Response 200 (application/json)
 
-### Remove a Note [DELETE]
-+ Response 204
+        {
+          "result": "ng",
+          "message": "ログイン出来ませんでした",
+        }
+
+### ログイン メソッドエラー [GET]
++ Response 405 (application/json)
+
+        {
+          "result": "ng"
+        }
+
