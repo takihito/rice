@@ -46,12 +46,12 @@ HOST: http://r.com
           "result": "ng"
         }
 
-## バージョンAPI [/api/app_version{?version}{?app_name}]
+## バージョンAPI [/api/app_version]
 
 ### バージョン確認 [GET]
 + Parameters
-    + version(string) ... application_version.
-    + app_name(string) ... application_name.
+    + version(required, string) ... application_version.
+    + app(string, `デフォルトアプリケーション名`) ... application_name.
     
 + Response 200 (application/json)
 
