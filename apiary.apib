@@ -5,38 +5,17 @@ HOST: http://r.com
 全国にお米を配達するスマホアプリのAPIドキュメントになります。
 
 
-## ログインAPI [/api/login]
-
+## ログインAPI [/api/login{?address}{?password}]
 ### ログイン [POST]
-
-+ Request (application/json)
-
-        {
-            username : "test@example.com",
-            password : "xxxxxxxx",
-        }
++ Parameters
+    + address(required, string) ... email.
+    + password(required, string`) ... password.
 
 + Response 200 (application/json)
 
         {
           "result": "ok",
           "token": "abcdefghijklmnop",
-        }
-
-### ログイン パラメータエラー [PUT]
-
-+ Request (application/json)
-
-        {
-            username : "",
-            password : "",
-        }
-
-+ Response 200 (application/json)
-
-        {
-          "result": "ng",
-          "message": "ログイン出来ませんでした",
         }
 
 ### ログイン メソッドエラー [GET]
@@ -60,6 +39,7 @@ HOST: http://r.com
           "froce_update": 1,
           "lasted_app_version": "1.01"
         }
+
 
 
 
