@@ -46,3 +46,23 @@ HOST: http://r.com
           "result": "ng"
         }
 
+## バージョンAPI [/api/app_version]
+
+### バージョン確認 [GET]
+
++ Request (application/json)
+
+        {
+            version : "1.00",
+        }
+
++ Response 200 (application/json)
+
+        {
+          "result": "ok",
+          "froce_update": 1,
+          "lasted_app_version": "1.01"
+        }
+
+
+
