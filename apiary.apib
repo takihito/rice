@@ -1,15 +1,16 @@
-FORMAT: 1A
 HOST: http://r.com
+FORMAT: 1A
 
 # Rice
+
 全国にお米を配達するスマホアプリのAPIドキュメントになります。
 
 
-## ログインAPI [/api/login{?address}{?password}]
-### ログイン [POST]
+## POST /api/login
+
 + Parameters
     + address(required, string) ... email.
-    + password(required, string`) ... password.
+    + password(required, string) ... password.
 
 + Response 200 (application/json)
 
@@ -18,20 +19,20 @@ HOST: http://r.com
           "token": "abcdefghijklmnop",
         }
 
-### ログイン メソッドエラー [GET]
+## GET /api/login
+
 + Response 405 (application/json)
 
         {
           "result": "ng"
         }
 
-## バージョンAPI [/api/app_version]
+## GET /api/app_version
 
-### バージョン確認 [GET]
 + Parameters
     + version(required, string) ... application_version.
     + app(string, `デフォルトアプリケーション名`) ... application_name.
-    
+
 + Response 200 (application/json)
 
         {
@@ -40,6 +41,17 @@ HOST: http://r.com
           "lasted_app_version": "1.01"
         }
 
+## POST /api/haikyu
+
++ Parameters
+    + address(required, string) ... your address.
+    + kg(required, number) ... kg.
+
++ Response 200 (application/json)
+
+        {
+          "result": "ok",
+        }
 
 
 
